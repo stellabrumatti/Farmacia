@@ -46,7 +46,9 @@ public class Produto implements Serializable {
     @JsonIgnoreProperties("produtos") // corresponde ao nome da lista em Categoria
     private Categoria categoria;
 
-
+    @ManyToOne
+    @JsonIgnoreProperties("produto")
+    private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -111,8 +113,21 @@ public class Produto implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
     
     
+	
     }
     
     
